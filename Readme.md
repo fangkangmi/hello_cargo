@@ -73,3 +73,7 @@ cargo test
 ```
 
 This will compile your tests and run them, providing feedback on which tests passed or failed. It's a powerful tool to ensure your code works as expected.
+
+### Variables and Mutability
+
+Constant cannot use mut. Declear const need to use 
