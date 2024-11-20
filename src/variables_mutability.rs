@@ -17,6 +17,7 @@ pub fn variable_and_constant() {
     // Constants can be declared in any scope, including the global scope, which makes them useful for values that many parts of the program need to know about.
     // Constants may be set only to a constant expression, not the result of a function call or any other value that could only be computed at runtime.
     const MAX_POINTS: u32 = 100_000;
+    println!("The value of MAX_POINTS is: {}", MAX_POINTS);
 }
 
 
@@ -74,6 +75,8 @@ pub fn data_type(){
     //The primary situation in which you'd use isize or usize is when indexing some sort of collection.
     let x: isize = 10;
     let y: usize = 10;
+    println!("The value of x is: {}", x);
+    println!("The value of y is: {}", y);
 }
 
 pub fn compound_types(){
@@ -100,4 +103,21 @@ pub fn compound_types(){
 
     println!("The first two months are: {}, {}", first, second);
 
+}
+
+pub fn match_num_4(){
+    let number = 6;
+
+    match number % 4 {
+        0 => println!("number is divisible by 4"),
+        _ => println!("number is not divisible by 4"),
+    }
+}
+
+pub fn all_data_types(){
+    variable_and_constant();
+    shadowing_example();
+    data_type();
+    compound_types();
+    match_num_4();
 }

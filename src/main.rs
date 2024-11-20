@@ -3,11 +3,19 @@
 mod variables_mutability;
 
 fn main(){
-    variables_mutability::variable_and_constant();
+    println!("the value is {}",another_function(5)); //argument
+    variables_mutability::match_num_4();
+}
 
-    variables_mutability::shadowing_example();
+fn another_function(x: i32) -> i32{ //parameter
+    let y = {
+        let x = 3;
+        x + 1 //expression
+    };
 
-    variables_mutability::data_type();
-
-    variables_mutability::compound_types();
+    //Create a function to avoid syntax error
+    if false {
+        variables_mutability::all_data_types();
+    } 
+    x + y
 }
