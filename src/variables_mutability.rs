@@ -1,6 +1,4 @@
-
-
-pub fn variable_and_constant() {
+fn variable_and_constant() {
     // println! is a macro that prints text to the console
     // ! indicates that it is a macro
     // The difference between a macro and a function is that a macro is a code generator that generates code at compile time
@@ -21,7 +19,7 @@ pub fn variable_and_constant() {
 }
 
 
-pub fn shadowing_example() {
+fn shadowing_example() {
     //shadowing: declare a new variable with the same name as a previous variable, and the new variable shadows the previous variable
     let x = 5;
     println!("The value of x is: {}", x);
@@ -40,7 +38,7 @@ pub fn shadowing_example() {
 //Rust is ahead of its time in terms of safety and performance.
 //Ahead of its time is a phrase that means that something is more advanced than its contemporaries.
 
-pub fn data_type(){
+fn data_type(){
     //Rust is a statically typed language, which means that it must know the types of all variables at compile time, however, the compiler can usually infer what type we want to use based on the value and how we use it.
     //Scalar types represent a single value. Rust has four primary scalar types: integers, floating-point numbers, Booleans, and characters.
     //Integers are a number without a fractional component. Rust has signed and unsigned integers. Signed integers can be positive, negative, or zero. Unsigned integers can only be positive or zero.
@@ -79,7 +77,7 @@ pub fn data_type(){
     println!("The value of y is: {}", y);
 }
 
-pub fn compound_types(){
+fn compound_types(){
     //tuple: a general way of grouping together a number of values with a variety of types into one compound type. Tuples have a fixed length: once declared, they cannot grow or shrink in size.
     //Tuples are useful for functions that need to return more than one value.
     let tup: (i32, f64, u8) = (500, 6.4, 1);
@@ -105,7 +103,7 @@ pub fn compound_types(){
 
 }
 
-pub fn match_num_4(){
+fn match_num_4(){
     let number = 6;
 
     match number % 4 {
@@ -114,7 +112,7 @@ pub fn match_num_4(){
     }
 }
 
-pub fn loop_example(){
+fn loop_example(){
     //loop: an infinite loop
     //break: to exit the loop
     //continue: to skip the rest of the current iteration and start a new one
@@ -144,7 +142,7 @@ pub fn loop_example(){
     }
 }
 
-pub fn for_loop(){
+fn for_loop(){
     //for loop: a loop that runs a piece of code for each item in a collection
     let a = [10, 20, 30, 40, 50];
 
@@ -164,7 +162,7 @@ pub fn for_loop(){
     }
 }
 
-pub fn all_data_types(){
+pub fn call_all_functions(){
     variable_and_constant();
     shadowing_example();
     data_type();
