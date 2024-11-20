@@ -114,10 +114,62 @@ pub fn match_num_4(){
     }
 }
 
+pub fn loop_example(){
+    //loop: an infinite loop
+    //break: to exit the loop
+    //continue: to skip the rest of the current iteration and start a new one
+    let mut counter = 0;
+
+    let result = loop {
+        counter += 1;
+
+        if counter == 10 {
+            break counter * 2
+        }
+    };
+
+    println!("The result is: {}", result);
+
+// =======================
+// Example of while loop
+    let mut number = 3;
+
+    while number !=0 {
+        println!("number {} is not correct, minuse one", number);
+        number -= 1;
+
+        if number == 0 {
+            println!("number is now 0");
+        }
+    }
+}
+
+pub fn for_loop(){
+    //for loop: a loop that runs a piece of code for each item in a collection
+    let a = [10, 20, 30, 40, 50];
+
+    for element in a.iter() {
+        println!("The value is: {}", element);
+    }
+
+    //================================================================
+    //Range: a type provided by the standard library that generates all numbers in sequence starting from one number and ending before another number
+
+    for number in (1..4).rev() {
+        println!("{}!", number);
+    }
+
+    for number in 1..=4 {
+        println!("{}!", number);
+    }
+}
+
 pub fn all_data_types(){
     variable_and_constant();
     shadowing_example();
     data_type();
     compound_types();
     match_num_4();
+    loop_example();
+    for_loop();
 }
