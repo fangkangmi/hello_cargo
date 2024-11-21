@@ -16,7 +16,7 @@ fn another_function(x: i32) -> i32{ //parameter
 
     //Create a function to avoid syntax error
     if false {
-        variables_mutability::all_data_types();
+        variables_mutability::call_all_functions();
         onwership::call_all_functions();
     } 
     x + y

@@ -47,6 +47,20 @@ fn reference_and_borrowing() {
     println!("The length of '{}' is {}", s1, len);
 }
 
+// dangling reference example
+// error[E0106]: missing lifetime specifier
+// fn dangle() -> &String {
+    // let s = String::from("hello");
+    // &s
+// }
+
+fn slice() {
+    let s = String::from("hello world");
+    let word_index = first_world(&s);
+
+    println!("The first word is {}", &s[..word_index]);
+}
+
 pub fn call_all_functions() {
     move_ownership();
     clone_and_modify();
@@ -54,6 +68,7 @@ pub fn call_all_functions() {
     take_and_copy();
     transfer_ownership();
     reference_and_borrowing();
+    slice();
 }
 
 fn take_ownership(s: String) {
@@ -76,3 +91,14 @@ fn takes_and_gives_back(a_string: String) -> String {
 fn calculate_length(s: &String) -> usize {
     s.len()
 }
+
+fn first_world(s: &String) -> usize {
+    let bytes = s.as_bytes();
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' { // b' ' is byte literal
+            return i;
+        }
+    }
+    s.len()
+}
+
