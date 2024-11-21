@@ -2,10 +2,10 @@
 // main function is the entry point of the program
 mod variables_mutability;
 mod onwership;
+mod struct_enums;
 
 fn main(){
     println!("the value is {}",another_function(5)); //argument
-    onwership::call_all_functions();
 }
 
 fn another_function(x: i32) -> i32{ //parameter
@@ -18,6 +18,7 @@ fn another_function(x: i32) -> i32{ //parameter
     if false {
         variables_mutability::call_all_functions();
         onwership::call_all_functions();
-    } 
+        struct_enums::call_all_functions();
+    }
     x + y
 }
