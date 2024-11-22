@@ -3,9 +3,11 @@
 mod variables_mutability;
 mod onwership;
 mod struct_sample;
+mod enum_sample;
 
 fn main(){
     println!("the value is {}",another_function(5)); //argument
+    enum_sample::call_all_functions();
 }
 
 fn another_function(x: i32) -> i32{ //parameter
@@ -19,6 +21,7 @@ fn another_function(x: i32) -> i32{ //parameter
         variables_mutability::call_all_functions();
         onwership::call_all_functions();
         struct_sample::call_all_functions();
+        enum_sample::call_all_functions();
     }
     x + y
 }
