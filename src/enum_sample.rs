@@ -113,6 +113,9 @@ fn main() {
     let six = plus_one(five);
     let none = plus_one(None);
 
+    println!("six: {:?}", six);
+    println!("none: {:?}", none);
+
 }
 
 pub fn call_all_functions() {
