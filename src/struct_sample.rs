@@ -89,10 +89,12 @@ fn area_struct(){
     let rect =Rectangle {width: 30, height: 50};
     println!("The area of the rectangle is {} square pixels.",rect.area());
     println!("rect1 is {:#?}", rect);
+
     let rect2 = Rectangle {width: 10, height: 40};
     let rect3 = Rectangle {width: 60, height: 45};
     println!("Can rect hold rect2? {}", rect.can_hold(&rect2));
     println!("Can rect hold rect3? {}", rect.can_hold(&rect3));
+    
     let s = Rectangle::square(3);
     println!("s is {:#?}", s);
 }

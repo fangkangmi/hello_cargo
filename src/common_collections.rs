@@ -69,6 +69,72 @@ fn create_spreadsheet(){
     }
 }
 
+fn string(){
+    // Rust string is a growable, mutable, owned, UTF-8 encoded string type
+    // UTF-8 is a variable-width encoding that can represent any Unicode code point
+    let mut _s = String::new();
+    let data = "initial contents";
+    let _s = data.to_string();
+    let _s  = "inintial content".to_string();
+    let _s = String::from("initial content");
+
+    let mut s = String::from("foo");
+    s.push_str("bar");
+    s.push('l');
+
+    let s1 = String::from("Hello, ");
+    let s2 = String::from("world!");
+    // let _s3 = si.clone() + &s2; // s1 is still valid here
+    let _s3 = s1 + &s2; // s1 has been moved here and can no longer be used
+    // println!("s1: {}", s1); //error[E0382]: borrow of moved value: `s1`
+
+    let s1 = String::from("tic");
+    let s2 = String::from("tac");
+    let s3 = String::from("toe");
+    // format! macro doesn't take ownership of any of its parameters
+    let s = format!("{}-{}-{}", s1, s2, s3);
+    println!("s: {}", s);
+}
+
+// String is a wrapper over a Vec<u8>
+fn string2(){
+    let hello = "Здравствуйте";
+    // Unicode scalar values range from U+0000 to U+D7FF and U+E000 to U+10FFFF
+    // 3: 208,151
+    println!("{}", hello.len()); //24
+
+    // chars() method returns a char type
+    for c in hello.chars(){
+        println!("{}", c);
+    }
+
+    // bytes of the string is: [208, 151, 208, 176, 209, 128, 209, 129, 208, 178, 208, 190, 208, 179, 209, 143]
+    for b in hello.bytes(){
+        println!("{}", b);
+    }
+
+    let answer = "नमस्ते";
+    // ['न', 'म', 'स', '्', 'त', 'े']
+    // but the last character is actually two characters
+    // We want ["न", "म", "स्", "ते"]
+    // We can use the grapheme_clusters method from the unicode-segmentation crate
+    for c in answer.chars(){
+        println!("{}", c);
+    }
+}
+
+fn string3(){
+    let s = String::from("Здравствуйте");
+    // let h = &s[0]; //error[E0277]: the type `str` cannot be indexed by `{integer}`
+
+    let h = &s[0..3];
+    // println!("{}", h); // panic! because the index is not at a character boundary
+    // (a1, b1) (a2, ||||  b2)  
+
+    let h = &s[0..4];
+    println!("{}", h);
+}
+
 fn main(){
     vectors();
 }

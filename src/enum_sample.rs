@@ -78,7 +78,28 @@ fn plus_one(x: Option<i32>) -> Option<i32> {
     }
 }
 
+#[allow(dead_code)]
+#[derive(Debug)]
+enum SpredsheetCell{
+    Int(i32),
+    Float(f64),
+    Text(String),
+}
 
+fn create_spreadsheet(){
+    let row = vec![
+        SpredsheetCell::Int(3),
+        SpredsheetCell::Text(String::from("blue")),
+        SpredsheetCell::Float(10.12),
+    ];
+
+    let mut row1: Vec::<SpredsheetCell> = Vec::new();
+
+    for cell in row {
+        println!("{:?}", cell);
+        row1.push(cell);
+    }
+}
 
 fn main() {
     let home = IpAddrKind::V4(127, 0, 0, 1);
@@ -122,4 +143,5 @@ pub fn call_all_functions() {
     main();
     option_sample();
     option_sample2();
+    create_spreadsheet();
 }
