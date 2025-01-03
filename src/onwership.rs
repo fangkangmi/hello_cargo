@@ -1,7 +1,7 @@
 fn move_ownership() {
     let s1 = String::from("hello");
     let s2 = s1;
-    // println!("{}", s); // error[E0382]: use of moved value: `s`
+    // println!("{}", s1); // error[E0382]: use of moved value: `s1`
     println!("{}", s2);
 }
 

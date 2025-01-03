@@ -12,6 +12,10 @@ fn demonstrate_vectors() {
 
     // Reading elements of vectors
     let mut vector = vec![1, 2, 3, 4, 5];
+    // & is a reference to the value, which does not have ownership
+    // The reference allows you to share the value without transferring ownership
+    // if we use vector[0], we would have to transfer ownership.
+    // this would mean that we could not use vector again
     let first_element = &vector[0];
 
     // vector.push(6);  //error[E0502]: cannot borrow `vector` as mutable because it is also borrowed as immutable
@@ -25,11 +29,18 @@ fn demonstrate_vectors() {
 }
 
 #[allow(unused_mut)]
-fn demonstrate_borrowing() {
+pub fn demonstrate_borrowing() {
     let mut vector = vec![100, 32, 57];
     let first_element = &vector[0];
-    // vector.push(6); //error[E0502]: cannot borrow `vector` as mutable because it is also borrowed as immutable
+
+    //vector.push(6); //error[E0502]: cannot borrow `vector` as mutable because it is also borrowed as immutable
+    
     println!("The first element is: {}", first_element);
+    vector.push(6); //error[E0502]: cannot borrow `vector` as mutable because it is also borrowed as immutable
+
+    // if we want to use the first element after pushing a new element
+    // we need to create a new reference
+    let _first_element = &vector[0];
 
     // Iterating over immutable references
     for i in &vector {

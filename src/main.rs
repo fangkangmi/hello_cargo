@@ -8,6 +8,7 @@ mod common_collections;
 
 
 fn main(){
+    common_collections::demonstrate_borrowing();
     println!("the value is {}",another_function(5)); //argument
 }
 

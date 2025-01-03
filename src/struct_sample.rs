@@ -1,12 +1,12 @@
 // This program demonstrates the use of structs and enums in Rust
 use std::cell::Cell;
 
+// Use cell to make the struct mutable, even if the struct itself is immutable
 struct User {
     pub username: String, // immutable field
     pub email: String,    // immutable field
     pub sign_in_count: Cell<u64>, // mutable field
     pub active: Cell<bool>,       // mutable field
-    
 }
 
 fn create_user() -> User {
@@ -57,12 +57,14 @@ fn create_location() -> Location {
     Location
 }
 
+// derive the Debug trait to print the struct
 #[derive(Debug)]
 struct Rectangle {
     width: u32,
     height: u32,
 }
 
+// methods are defined within the context of a struct
 impl Rectangle{
     // use & to borrow the struct instead of taking ownership
     fn area(&self) -> u32{
