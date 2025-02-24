@@ -166,6 +166,7 @@ fn demonstrate_hash_map_from_vectors() {
     let initial_scores = vec![10, 50];
 
     // zip method creates a vector of tuples
+    // collect method is used to convert the vector of tuples into a HashMap
     let scores: HashMap<_, _> = teams.iter().zip(initial_scores.iter()).collect();
 
     let field_name = String::from("Blue");
